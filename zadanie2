@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace malek
+{
+    internal class Employse
+    {
+        private string name;
+        private double salary;
+    }
+    public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+}
