@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace malek
+{
+    internal class Book
+    {
+        private string title;
+        private int pages;
+        public string Title
+        {
+            get { return title; } 
+            set { title = value; }
+        }
+        public int Pages
+        {
+            get { return pages; } 
+            set
+            {
+                if (value >= 1 && value <= 5000)
+                {
+                    pages = value;
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка, количество страниц должно быть от 1 до 5000.");
+                    
+                }
+            }
+        }
+        public Book (string title, int pages)
+        {
+            this.Title = title;
+            this.Pages = pages;
+        }
+        public Book(string title)
+        { 
+            this.Title = title;
+            this.Pages = 100;
+        }
+        public Book()
+        {
+            this.Title = "Без названия";
+            this.Pages = 1;
+        }
+        public void Read()
+        {
+            Console.WriteLine($"Читаю книгу '{title}', страниц {pages}.");
+        }
+    }
+}
+internal class Program
+{ 
+    static void Main(string[] args)
+    {
+        Book book1 = new Book("Война и мир", 1500);
+        book1.Read();
+        Book book2 = new Book("Маленький принц");
+        book2.Read();
+        Book book3 = new Book();
+        book3.Read();
+        Book book4 = new Book("Муму" ,0);
+        book4.Read();
+    }
+}
