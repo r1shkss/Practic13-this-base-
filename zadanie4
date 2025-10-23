@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace malek2
+{
+    public class Point
+    {
+        private double x;
+        private double y;
+        public double X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+        public double Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+        public Point(double x, double y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+        public Point(double value)
+        {
+            this.x = value;
+            this.y = value;
+        }
+        public Point()
+        {
+            this.x = 0;
+            this.y = 0;
+        }
+        public void Show()
+        {
+            Console.WriteLine($"Точка: ({x}, {y})");
+        }
+    }
+
+}
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Point point1 = new Point(5.2, 81.2);
+        Point point2 = new Point(3.8);
+        Point point3 = new Point();
+        point1.Show();
+        point2.Show();
+        point3.Show();
+    }
+}
